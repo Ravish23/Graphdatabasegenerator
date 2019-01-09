@@ -155,7 +155,7 @@ export class DataParametersFormComponent implements OnInit {
 
 
     /**
-     * generateData
+     * generate Cypher 
      *
      * Generate the cypher query according to the DataParameters
      *
