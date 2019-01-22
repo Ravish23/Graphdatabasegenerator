@@ -19,6 +19,12 @@ body{
   padding:12px;
   
 }
+ .footer{
+	font-size: 14px;
+  background: #FFD700;
+  border-bottom: 2px solid;
+  
+}
 .container {	
 	margin: 30px auto;
 }
