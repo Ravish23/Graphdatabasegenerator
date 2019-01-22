@@ -2,7 +2,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 .popover-body {
-  font-size:  12px;
+  font-size:  14px;
   font-family: arial;
   background: FAFAD2;
 }
@@ -19,10 +19,11 @@ body{
   padding:12px;
   
 }
- .footer{
+.footer{
 	font-size: 14px;
   background: #FFD700;
   border-bottom: 2px solid;
+  padding:12px;
   
 }
 .container {	
