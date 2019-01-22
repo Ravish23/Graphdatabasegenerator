@@ -3,4 +3,17 @@
 
 .popover-body {
   font-size:  12px;
+  font-family: arial;
+}
+body{
+       font-size:  14px;
+       font-family: arial;
+}
+.header{
+	font-size:  20px;
+background: #48D1CC;
+  
+}
+.container {	
+	margin: 30px auto;
 }
