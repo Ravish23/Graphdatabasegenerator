@@ -146,6 +146,7 @@ var DataParametersFormComponent = /** @class */ (function () {
         }
         this.dataGenerated = this.generateData(this.dataParameters);
     };
+
     /**
      * generateData
      *
@@ -172,6 +173,8 @@ var DataParametersFormComponent = /** @class */ (function () {
         }
         return cypher_query;
     };
+
+    
     /**
      * generateUniformRelationships
      *

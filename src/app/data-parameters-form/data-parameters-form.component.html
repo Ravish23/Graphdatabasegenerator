@@ -1,4 +1,4 @@
-<body class="bg-">
+<body class="bg-info">
 
 <div class="header">
   <div class="py-5 text-center">
@@ -313,15 +313,17 @@
     <! Form --------------------------------------- >
 
     <button class="btn btn-primary btn-lg btn-block col-sm-2" type="submit" [disabled]="!dataParametersForm.valid">
-      Generate Cypher
-    </button>
+Generate Cypher
+     </button>
+      <hr class="mb-2">
 
+    <! ---------------------ADDING BUTTON----------------------- >
+    <button (click)="onClickMe()">Generate CSV File </button>
 
-    <! ---------------------------------------------- >
+    <! ------------------------------------------------------- >
 
     <hr class="mb-4">
 
-  </form>
 
   <button class="btn btn-default"
           type="button"
@@ -330,6 +332,8 @@
           (cbOnSuccess)="isDataCopied = true"
           [class.btn-success]="isDataCopied"
   >copy</button>
+</form>
+
 
   <! ---------------------------------------------- >
   <! -------------- DATA GENERATED --------------- >

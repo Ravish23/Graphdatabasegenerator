@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl, Validators, FormsModule, NgForm } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { DataParameters } from '../data_parameters_model';
-
+import FileSaver from 'file-saver';
 
 @Component({
     selector: 'app-data-parameters-form',
@@ -152,7 +152,60 @@ export class DataParametersFormComponent implements OnInit {
         this.dataGenerated = this.generateData(this.dataParameters);
 
     }
+/**
+ * ----------------------NEW CODE ADDED FOR THE FILE EXPORT ----------------------
+ */
 
+onClickMe() {
+    //  console.log ('You are my hero!');
+      let blob = new Blob([this.dataGenerated], { type: 'csv' });
+      FileSaver.saveAs(blob, "cypherGenerated.csv");
+  
+      }
+
+  
+      getNodeProperties(nodeProperties): string[] {
+          const words: string[] = [];
+  
+            for ( var j = 0; j < nodeProperties.length; j++) {
+              words.push(nodeProperties[j]+':'+this.getRandomNumber(0, 100));
+           }
+        //   console.log(words);
+           
+          return words;
+      }
+  
+  
+     getNodePropertiesWithMissing(nodeProperties): string[] {
+          const words: string[] = [];
+        
+        
+          
+  
+        // for ( var j = 0; j < nodeProperties.length-(this.getRandomNumber(1,nodeProperties.length)); j++) {
+      // for ( var j = (this.getRandomNumber(4,nodeProperties.length)); j >= 0; j--) {
+        
+        for ( var j = 0; j < (this.getRandomNumber(3,nodeProperties.length)); j++) {
+              words.push(nodeProperties[j]+':'+this.getRandomNumber(1, 100));
+           }
+  
+         // console.log(words);
+          console.log(nodeProperties.length);
+          console.log('words.length '+ words.length);
+      //    if (words.length <= 0){
+       //    words.push(nodeProperties[0]+':'+this.getRandomNumber(1, 100));
+           //  for ( var j = 0; j < nodeProperties.length-(this.getRandomNumber(0,nodeProperties.length)); j++) {
+  
+            //      words.push(nodeProperties[j]+':'+this.getRandomNumber(1, 100));
+         
+           //   }
+            // console.log('null array now = ' + words);
+        //    this.getNodePropertiesWithMissing(nodeProperties[0]);
+            
+       //   } 
+  
+          return words;    
+        }     
 
     /**
      * generate Cypher 
@@ -185,7 +238,7 @@ export class DataParametersFormComponent implements OnInit {
 
         return cypher_query;
     }
-
+    
     /**
      * generateUniformRelationships
      *
